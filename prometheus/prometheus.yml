@@ -34,11 +34,10 @@ scrape_configs:
     static_configs:
       - targets: ['pushgateway:9091']
 
-  - job_name: 'nodejs'
-    scrape_interval: 10s
-    honor_labels: true
+  - job_name: 'flask-api'
+    scrape_interval: 5s
     static_configs:
-      - targets: ['host.docker.internal:4000']
+    - targets: ['flask-api:5000']
 
 
 alerting:

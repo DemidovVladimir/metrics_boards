@@ -34,4 +34,4 @@ To validate logs:
 
 http://localhost:3000 - Grafana
 http://localhost:9090 - Prometheus
-http://localhost:<port> - Your service metrics as a list
+http://localhost:5000 - Your service metrics as a list

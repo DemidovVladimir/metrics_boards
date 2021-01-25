@@ -12,13 +12,17 @@ services:
 
   app:
     container_name: app
-    image: vladimir/auth-service
+    image: vladimir/microservice
     build:
-      context: ../authentication-service
-      dockerfile: devDockerfile
+      context: ./microservice
+      dockerfile: Dockerfile
+    volumes:
+      - ./microservice/:/usr/src/api/
     ports:
-      - 4000:4000
-    command: "yarn start:dev"
+      - 5000:5000
+    environment: 
+      PORT: 5000
+      FLASK_DEBUG: 1
 
   prometheus:
     image: prom/prometheus:v2.22.0
