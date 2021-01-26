@@ -26,12 +26,11 @@ Under dockprom/prometheus/prometheus.yml , you can find an array of jobs prometh
     - targets: ['host.docker.internal:<port>']
 ```
 
-To validate logs:
-* Change if needed Tiltfile to point to your locally (docker) running service
-* Run yarn
+To start the entire stack you only have to:
 * Run: tilt up
 * Wait until services are running and then you can visit:
 
 http://localhost:3000 - Grafana
 http://localhost:9090 - Prometheus
-http://localhost:5000 - Your service metrics as a list
+http://localhost:5000 - Flask based service
+http://localhost:5000/metrics - Service metrics titles
