@@ -5,7 +5,7 @@ A monitoring solution for Docker hosts and containers with [Prometheus](https://
 [NodeExporter](https://github.com/prometheus/node_exporter) and alerting with [AlertManager](https://github.com/prometheus/alertmanager).
 
 Containers:
-
+* Microservice (flask service) `http://<host-ip>:5000`
 * Prometheus (metrics database) `http://<host-ip>:9090`
 * Prometheus-Pushgateway (push acceptor for ephemeral and batch jobs) `http://<host-ip>:9091`
 * AlertManager (alerts management) `http://<host-ip>:9093`
@@ -13,18 +13,6 @@ Containers:
 * NodeExporter (host metrics collector)
 * cAdvisor (containers metrics collector)
 * Caddy (reverse proxy and basic auth provider for prometheus and alertmanager)
-
-Connecting nodejs exporter to Prometheus:
-
-Under dockprom/prometheus/prometheus.yml , you can find an array of jobs prometheus will scrape. Add the following into the list:
-
-```
-- job_name: 'nodejs'
-  scrape_interval: 10s
-  honor_labels: true
-  static_configs:
-    - targets: ['host.docker.internal:<port>']
-```
 
 To start the entire stack you only have to:
 * Run: tilt up
