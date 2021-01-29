@@ -5,7 +5,7 @@ A monitoring solution for Docker hosts and containers with [Prometheus](https://
 [NodeExporter](https://github.com/prometheus/node_exporter) and alerting with [AlertManager](https://github.com/prometheus/alertmanager).
 
 Containers:
-
+* Microservice (flask service) `http://<host-ip>:5000`
 * Prometheus (metrics database) `http://<host-ip>:9090`
 * Prometheus-Pushgateway (push acceptor for ephemeral and batch jobs) `http://<host-ip>:9091`
 * AlertManager (alerts management) `http://<host-ip>:9093`
